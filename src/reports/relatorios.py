@@ -19,6 +19,12 @@ class Relatorio:
 
         with open("sql/relatorio_itens_pedidos.sql") as f:
             self.query_relatorio_itens_pedidos = f.read()
+            
+        with open("sql/relatorio_funcionario.sql") as f:
+            self.query_relatorio_funcionario = f.read()
+            
+        with open("sql/relatorio_empresa.sql") as f:
+            self.query_relatorio_empresa = f.read()
 
     def get_relatorio_pedidos(self):
         oracle = OracleQueries()
@@ -55,3 +61,15 @@ class Relatorio:
         oracle.connect()
         print(oracle.sqlToDataFrame(self.query_relatorio_itens_pedidos))
         input("Pressione Enter para Sair do Relatório de Itens de Pedidos")
+        
+    def get_relatorio_funcionario(self):
+        oracle = OracleQueries()
+        oracle.connect()
+        print(oracle.sqlToDataFrame(self.query_relatorio_funcionario))
+        input("Pressione Enter para Sair do Relatório de Funcionarios")
+        
+    def get_relatorio_empresa(self):
+        oracle = OracleQueries()
+        oracle.connect()
+        print(oracle.sqlToDataFrame(self.query_relatorio_empresa))
+        input("Pressione Enter para Sair do Relatório de Empresas")
