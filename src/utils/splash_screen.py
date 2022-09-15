@@ -8,7 +8,9 @@ class SplashScreen:
         self.qry_total_fornecedores = "select count(1) as total_fornecedores from fornecedores"
         self.qry_total_pedidos = "select count(1) as total_pedidos from pedidos"
         self.qry_total_itens_pedido = "select count(1) as total_itens_pedido from itens_pedido"
-        self.created_by = "Howard Roatti"
+        self.qry_total_funcionario = "select count(1) as total_funcionario from funcionario"
+        self.qry_total_empresa = "select count(1) as total_empresa from empresa"
+        self.created_by = "Arthur Grinewald Ciro Massariol Gabrieli Mombrini Livia Hand"
         self.professor = "Prof. M.Sc. Howard Roatti"
         self.disciplina = "Banco de Dados"
         self.semestre = "2022/2"
@@ -37,11 +39,21 @@ class SplashScreen:
         oracle = OracleQueries()
         oracle.connect()
         return oracle.sqlToDataFrame(self.qry_total_itens_pedido)["total_itens_pedido"].values[0]
+    
+    def get_total_funcionario(self):
+        oracle = OracleQueries()
+        oracle.connect()
+        return oracle.sqlToDataFrame(self.qry_total_funcionario)["total_funcionario"].values[0]
+    
+    def get_total_empresa(self):
+        oracle = OracleQueries()
+        oracle.connect()
+        return oracle.sqlToDataFrame(self.qry_total_empresa)["total_empresa"].values[0]
 
     def get_updated_screen(self):
         return f"""
         ########################################################
-        #                   SISTEMA DE VENDAS                     
+        #                   SISTEMA DE NEGOCIO                     
         #                                                         
         #  TOTAL DE REGISTROS:                                    
         #      1 - PRODUTOS:         {str(self.get_total_produtos()).rjust(5)}
@@ -49,6 +61,8 @@ class SplashScreen:
         #      3 - FORNECEDORES:     {str(self.get_total_fornecedores()).rjust(5)}
         #      4 - PEDIDOS:          {str(self.get_total_pedidos()).rjust(5)}
         #      5 - ITENS DE PEDIDOS: {str(self.get_total_itens_pedidos()).rjust(5)}
+        #      6 - FUNCIONARIO:      {str(self.get_total_funcionario()).rjust(5)}
+        #      7 - EMPRESA:          {str(self.get_total_empresa()).rjust(5)}
         #
         #  CRIADO POR: {self.created_by}
         #
