@@ -13,6 +13,8 @@ MENU_RELATORIOS = """Relatórios
 4 - Relatório de Clientes
 5 - Relatório de Fornecedores
 6 - Relatório de Itens de Pedidos
+7 - Relatorio de Funcionarios
+8 - Relatorio de Empresas
 0 - Sair
 """
 
@@ -22,6 +24,8 @@ MENU_ENTIDADES = """Entidades
 3 - FORNECEDORES
 4 - PEDIDOS
 5 - ITENS DE PEDIDOS
+6 - FUNCIONARIOS
+7 - EMPRESAS
 """
 
 def clear_console(wait_time:int=3):
