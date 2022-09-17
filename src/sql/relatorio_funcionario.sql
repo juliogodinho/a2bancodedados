@@ -1,4 +1,4 @@
-select c.cpf
-     , c.nome 
-  from funcionario c
- order by c.nome
+select u.cpf
+     , u.nome 
+  from funcionario u
+ order by u.nome
