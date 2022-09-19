@@ -10,7 +10,7 @@ class SplashScreen:
         self.qry_total_itens_pedido = "select count(1) as total_itens_pedido from itens_pedido"
         self.qry_total_funcionario = "select count(1) as total_funcionario from funcionario"
         self.qry_total_empresa = "select count(1) as total_empresa from empresa"
-        self.created_by = "Arthur Grinewald Ciro Massariol Gabrieli Mombrini Livia Hand"
+        self.created_by = "Arthur Grinewald Ciro Massariol Gabrieli Mombrini Livia Hand Julio Godinho"
         self.professor = "Prof. M.Sc. Howard Roatti"
         self.disciplina = "Banco de Dados"
         self.semestre = "2022/2"
